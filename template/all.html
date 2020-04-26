@@ -1,0 +1,22 @@
+{%for post in posts%}
+<div style="padding: 15px; margin: 5px auto;background-color: lightblue;margin: 3rem; width:500px;" class="post">
+    <br>
+    <p><strong>{{post.title}}</strong></p>
+    <br>
+    <div>{{post.content|safe}}</div>
+    <br>
+    {%for tag in post.tags.all%}
+    <span>{{tag.name}}</span>
+    {%endfor%}
+</div>
+{%endfor%}
+
+<style>
+    span {
+        display: inline-block;
+        padding: 8px;
+        border-radius: 15px;
+        background-color: lightcoral;
+        margin: 5px 10px;
+    }
+</style>
